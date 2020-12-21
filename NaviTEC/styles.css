@@ -6,7 +6,7 @@ body{
 }
 
 h1 {
-    padding-bottom: 15px;
+    padding-bottom: 1px;
     background:linear-gradient(40deg, #34A65F, #235E6F) !important;
     color: #fff;
     padding: 16px 30px;
@@ -17,7 +17,13 @@ h1 {
 
 label {
     font-size: 20px;
+    padding-left: 440px;
+
   }
 
 
 
+input  {
+    margin-left: auto;
+    margin-right: auto;
+  }
