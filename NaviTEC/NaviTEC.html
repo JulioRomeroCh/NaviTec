@@ -1,39 +1,99 @@
 <!DOCTYPE html>
-<html lang = "en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-</head>
-<body>
-    <h1>NaviTEC</h1>
 
-    <div class="alert alert-success" role="alert">
-        <a href="#" class="alert-link">NaviTEC</a>
+<html lang = "en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>NAVITEC</title>
+    <!-- -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="C:\Users\KevRj\OneDrive\Escritorio\PROGRA\NaviTec\NaviTEC\styles.css">
+
+</head>
+
+<body>
+    <center><h1>Santa's Assistant Management</h1></center>
+    
+    <div style="width:80%;">
+    
+        <form id="CRUD Ayudantes Santa" method="post">
+
+            <label> ID </label>
+            <input type="number" name="ID" class="form-control" required>
+            <br>
+
+            <label>Name</label>
+            <input type="text" name="Name" class="form-control">
+            <br>
+
+            <label>Start date</label>
+            <input type="date" name="Start date" class="form-control" required>
+            <br>
+
+            <label>Username</label>
+            <input type="text" name="username" class="form-control" required>
+            <br>
+
+            <center>
+            <button type="submit" style="margin: 10px" class="btn btn-lg btn-primary"> Add </button>
+
+            <button type="submit" style="margin: 10px" class="btn btn-lg btn-warning"> Update </button>
+
+            <button type="submit" style="margin: 10px" class="btn btn-lg btn-danger"> Delete </button>
+            
+            </center>
+
+        </form>
+
     </div>
 
-    <button class="btn btn-primary">
-        Ayudantes de Santa   
-    </button>
+    <div>
 
-    <button class="btn btn-primary">
-        Categoría de Juguetes   
-    </button>
+        <br>
 
-    <button class="btn btn-primary">
-        Juguetes   
-    </button>
+        <div id="Santa's Assitant Table" style="width: 80%">
 
-    <button class="btn btn-primary">
-        Catálogo (Domicilios)   
-    </button>
+            <h2> Santa's Assistant Table </h2>
 
+            <br>
+
+        <table class="table">
+            <tr>
+                <td> <strong> ID </strong></td>
+                <td> <strong> Name </strong></td>
+                <td> <strong> Start date </strong></td>
+                <td> <strong> username </strong></td>
+            </tr>
+
+        </table>
+        
+        
+        </div>
+
+    </div>
+
+    <section class="sky">
+        <div class="color"><p>#34A65F</p></div>
+        <div class="color"><p>#0F8A5F</p></div>
+        <div class="color"><p>#235E6F</p></div>
+    </section>
+  
     <script src="js/jquery.js"> </script>
+
     <script src="js/bootstrap.min.js"> </script>
-    
-    <script src= "NaviTEC.js" type = "text/javascript"> </script>         
 
-
+    <script src= "NaviTec.js" type = "text/javascript"> </script>
+  
 </body>
+
 </html>
