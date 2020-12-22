@@ -1,4 +1,71 @@
 
+    function hola () {
+      document.write ("Hola");
+
+    }
+
+    hola();
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (function () {
 
     var COUNT = 300;
@@ -23,7 +90,7 @@
       if (!wasActive && active)
         requestAnimFrame(update);
     }
-  
+ 
     var Snowflake = function () {
       this.x = 0;
       this.y = 0;
@@ -94,3 +161,10 @@
   
     masthead.appendChild(canvas);
   })();
+
+
+
+
+
+
+
