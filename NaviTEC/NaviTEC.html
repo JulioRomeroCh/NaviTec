@@ -21,12 +21,14 @@
 
     <script type = "text/javascript" src= "NaviTec.js"> </script>
 
+ 
+
 </head>
 
 <body>
     <center><h1>Santa's Assistant Management</h1></center>
 
-    <input type="button" onclick="hola()" value="Display">
+    <input type="button" onclick="selectSantasAssistant()" value="crud">
     
     <div style="width:80%;">
     
@@ -49,7 +51,7 @@
             <br>
 
             <center>
-            <button type="submit" style="margin: 10px" class="btn btn-lg btn-primary"> Add </button>
+            <button type="submit" id = "AddButton"style="margin: 10px" class="btn btn-lg btn-primary"> Add </button>
 
             <button type="submit" style="margin: 10px" class="btn btn-lg btn-warning"> Update </button>
 
@@ -70,7 +72,8 @@
 
             <br>
 
-        <table class="table">
+
+        <table id = "SATable" class="table">
             <tr>
                 <td> <strong> ID </strong></td>
                 <td> <strong> Name </strong></td>
@@ -97,6 +100,7 @@
 
     <script src="js/bootstrap.min.js"> </script>
 
+    <script type = "text/javascript" src = "app.js"> </script>
 
     
     
