@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Behaviors_Registered_By_Name" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c6167c1c-4840-4e2e-8793-7723879683f6">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DS_navitec"/>
+	<parameter name="Name" class="java.lang.String"/>
+	<parameter name="LastName" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[call behaviors_registered_by_name( $P{Name},  $P{LastName} );]]>
+	</queryString>
+	<field name="indication" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="indication"/>
+		<property name="com.jaspersoft.studio.field.label" value="indication"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="behavior"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="description"/>
+		<property name="com.jaspersoft.studio.field.label" value="description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="behavior"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="0" width="550" height="30" uuid="156db63e-a0a9-49fb-9f47-2912c95f31a9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["Behaviors registered by name: "+$P{Name}+" "+$P{LastName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="40" width="100" height="30" uuid="0d531e69-bb42-4ee9-a17e-59b7fd9b005f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Indication"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="40" width="190" height="30" uuid="442b6915-e468-4e15-9eb7-be8a60295e26"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Description"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="190" y="10" width="100" height="30" uuid="3a85db4d-9fa0-4ac3-97dc-5063c3cfd160"/>
+				<textFieldExpression><![CDATA[$F{indication}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="10" width="190" height="30" uuid="d6011955-cab9-42fd-9cb6-ecbd4792456e"/>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

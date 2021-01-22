@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Amount_Of_Toys_Requested_By_Country" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cdc04ed9-71b6-48e5-b31f-7355c1aca5d7">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DS_navitec"/>
+	<parameter name="CountryName" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[call amount_of_toys_requested_by_country( $P{CountryName} );]]>
+	</queryString>
+	<field name="ammount" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="ammount"/>
+		<property name="com.jaspersoft.studio.field.label" value="ammount"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="30" width="545" height="30" uuid="fc40566c-4c6d-46cc-8893-422ae12dc9a3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["Amount of toys requested in "+ $P{CountryName}+": "+$F{ammount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Kid_With_More_Good_Behaviors_By_Age_Range" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c84a7a55-e942-4c20-ba55-0d67980d6bd2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DS_navitec"/>
+	<parameter name="Age1" class="java.lang.Integer"/>
+	<parameter name="Age2" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[call KID_WITH_MORE_GOOD_BEHAVIORS_BY_AGE_RANGE( $P{Age1},  $P{Age2} );]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="person"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lastname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="lastname"/>
+		<property name="com.jaspersoft.studio.field.label" value="lastname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="person"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="amount"/>
+		<property name="com.jaspersoft.studio.field.label" value="amount"/>
+	</field>
+	<field name="indication" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="indication"/>
+		<property name="com.jaspersoft.studio.field.label" value="indication"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="behavior"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="age" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="age"/>
+		<property name="com.jaspersoft.studio.field.label" value="age"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="24" width="550" height="30" uuid="2ae8f269-db15-4140-876c-240fa61949dc"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KID WITH MORE GOOD BEHAVIORS BY AGE RANGE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="60" y="15" width="100" height="30" uuid="5d788307-fdeb-475a-8cb7-ec5d9abd5d8a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24aeb793-6150-471b-a780-a0d2d81d2e85"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="15" width="100" height="30" uuid="220f4eae-15c5-4a0c-86dd-103df2c62fc3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="066ba8d2-f26b-490b-8607-d713339dcfc3"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="15" width="100" height="30" uuid="55849781-6234-427f-a776-4fa3459ea01b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c1cb2f39-7b41-4e7c-bdf9-a62b60ab5f9d"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[lastname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="15" width="100" height="30" uuid="a46582ab-73c8-470c-b4ac-a3edc504ecba">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="50d532cd-ad03-45ef-a389-cfbff8071e01"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[indication]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="15" width="100" height="30" uuid="72a0b076-161c-44f0-ab7d-fb529c9cbd4b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="57e18fe4-2a10-4fce-b761-de04f9c9830e"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="60" y="10" width="100" height="30" uuid="b7107185-9e80-464e-841a-1f96b93383c9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24aeb793-6150-471b-a780-a0d2d81d2e85"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="10" width="100" height="30" uuid="9dd65d9e-8d2c-41da-bc59-d726649d4c59">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="066ba8d2-f26b-490b-8607-d713339dcfc3"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="10" width="100" height="30" uuid="f792d1ed-7df8-44b7-a08b-b1fd7d92ff3e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c1cb2f39-7b41-4e7c-bdf9-a62b60ab5f9d"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lastname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="10" width="100" height="30" uuid="ff55218b-0658-4d69-aa10-304a64dd3cd7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="50d532cd-ad03-45ef-a389-cfbff8071e01"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{indication}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="10" width="100" height="30" uuid="e1cb29ec-7589-4699-a522-7230e63a9e02">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="57e18fe4-2a10-4fce-b761-de04f9c9830e"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Amount_Of_Toys_Requested_By_Category_And_Country" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b88a3e25-403b-40b7-b57e-0dc5864f3baf">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DS_navitec"/>
+	<parameter name="CategoryName" class="java.lang.String"/>
+	<parameter name="CountryName" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[call amount_of_toys_requested_by_category_and_country( $P{CategoryName}, $P{CountryName}  );]]>
+	</queryString>
+	<field name="ammount" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="ammount"/>
+		<property name="com.jaspersoft.studio.field.label" value="ammount"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="91" splitType="Stretch">
+			<textField>
+				<reportElement x="52" y="30" width="450" height="30" uuid="2188d0e1-8723-4748-b25c-d244410fac56"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["Amount of toys requested by "+$P{CategoryName}+" in "+$P{CountryName}+": "+$F{ammount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

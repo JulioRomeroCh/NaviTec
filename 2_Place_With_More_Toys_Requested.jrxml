@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Place_With_More_Toys_Requested" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="59958cee-b628-4cd1-bfac-ad51624a3a9a">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DS_navitec"/>
+	<queryString language="SQL">
+		<![CDATA[call place_with_more_toys_requested();]]>
+	</queryString>
+	<field name="Toys" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="Toys"/>
+		<property name="com.jaspersoft.studio.field.label" value="Toys"/>
+	</field>
+	<field name="country_code" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="country_code"/>
+		<property name="com.jaspersoft.studio.field.label" value="country_code"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="country"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="30" width="400" height="30" uuid="3e3f3d39-e594-4a81-a056-d545b835127c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Place with more toys requested: ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="280" y="10" width="100" height="30" uuid="68a1fb9e-089d-476e-ab50-89bf087bd217"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{country_code}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="10" width="100" height="30" uuid="5541927b-83de-4c9b-9ce5-151439ebaff9"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[country_code]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="40" width="100" height="30" uuid="a6c63bff-7165-4627-9702-00b4a6dd88af"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Toys}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="40" width="100" height="30" uuid="93bfddc7-c607-4c84-955c-68b7ba154b88"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Toys]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

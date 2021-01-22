@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Average_Of_Good_Behaviors" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2b11c137-d317-40ae-8e8a-7e0869544cbb">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DS_navitec"/>
+	<queryString language="SQL">
+		<![CDATA[call Average_of_good_behaviors();]]>
+	</queryString>
+	<field name="indication" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="indication"/>
+		<property name="com.jaspersoft.studio.field.label" value="indication"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="behavior"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Average" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Average"/>
+		<property name="com.jaspersoft.studio.field.label" value="Average"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="20" width="400" height="30" uuid="ebcd4da6-343a-4918-a8c5-38693aaf2fc2"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Average of good behaviors]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="11" width="100" height="30" uuid="c32161b8-7884-4e72-b4f4-6b09d357d53f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ad4c6bf8-609b-4076-972c-dddf4710ece6"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[indication]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="11" width="100" height="30" uuid="3a7659e4-6152-450c-a42c-476489310ced">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9942cdde-dd97-41f8-b235-e8a9e65b16ad"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Average]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="180" y="-9" width="100" height="30" uuid="a3bb56e3-f9c1-47d4-9828-6006a9b59b64">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ad4c6bf8-609b-4076-972c-dddf4710ece6"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{indication}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="-9" width="100" height="30" uuid="96c2edbe-1e7a-40c9-b03e-ba1b43728822">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9942cdde-dd97-41f8-b235-e8a9e65b16ad"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Average}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

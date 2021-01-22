@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Amount_of_Letters_Processed_by_Assistant" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f313d812-6874-4330-8864-2b2f9874a02b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DS_navitec"/>
+	<parameter name="Assistant_id" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[call amount_of_letters_processed_by_assistant( $P{Assistant_id} );]]>
+	</queryString>
+	<field name="AmmountOfLetters" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="AmmountOfLetters"/>
+		<property name="com.jaspersoft.studio.field.label" value="AmmountOfLetters"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="30" width="370" height="30" uuid="eba2aa33-9a29-4b22-b942-8d06c2e167b0"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["Amount of letters processed by "+$P{Assistant_id}+": "+$F{AmmountOfLetters}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

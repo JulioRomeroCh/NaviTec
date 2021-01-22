@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Min_Max_And_Avg_Cost_Of_Toys_Per_Country_Age_Range_And_Category" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ba8e7e5a-65b0-4b80-8199-98d9bad9a7e7">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DS_navitec"/>
+	<queryString language="SQL">
+		<![CDATA[call min_max_and_avg_cost_of_toys_per_country_age_range_and_category();]]>
+	</queryString>
+	<field name="MinCost" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="MinCost"/>
+		<property name="com.jaspersoft.studio.field.label" value="MinCost"/>
+	</field>
+	<field name="maxCost" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="maxCost"/>
+		<property name="com.jaspersoft.studio.field.label" value="maxCost"/>
+	</field>
+	<field name="AverageCost" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="AverageCost"/>
+		<property name="com.jaspersoft.studio.field.label" value="AverageCost"/>
+	</field>
+	<field name="age_range" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="age_range"/>
+		<property name="com.jaspersoft.studio.field.label" value="age_range"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="toy"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Country" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Country"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="country"/>
+	</field>
+	<field name="category_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="category_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="category_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="category"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="50" y="24" width="480" height="30" uuid="e5047829-7ff8-4762-aad8-1b4247a9b5f1"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Minimum, maximum  and average cost of toys per country, age range and category: ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="211" splitType="Stretch">
+			<textField>
+				<reportElement x="300" y="10" width="100" height="30" uuid="d62bbe90-4091-48e3-b3b9-bdc9190c923c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Country}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="10" width="100" height="30" uuid="9dc7d325-ffab-470b-99af-c28c63f9b7c0"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Country]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="40" width="100" height="30" uuid="cc32d48c-837e-42f3-bb8a-c71ccf000872"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{age_range}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="40" width="100" height="30" uuid="8bada147-bc11-42a2-aa69-9e21d3d83c5c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[age_range]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="70" width="100" height="30" uuid="6a1095f6-0824-4d0e-961a-bcbaf26c1f3c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{category_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="70" width="100" height="30" uuid="885c9806-0a06-4eaa-9507-d990b4ec79e3"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[category_name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="100" width="100" height="30" uuid="a97f281c-c411-40c6-9b00-3f2f0493fd57"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{MinCost}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="100" width="100" height="30" uuid="f0d9d3a3-d2ae-44ff-a68f-fbed68e435e2"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[MinCost]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="130" width="100" height="30" uuid="b729a182-3f61-455e-87c9-ba2806079e4d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{maxCost}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="130" width="100" height="30" uuid="814bad99-60d2-4a8f-9e00-d8e79484a2fb"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[maxCost]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="160" width="100" height="30" uuid="c84abad9-c618-4572-893d-185516d6dfc9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{AverageCost}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="160" width="100" height="30" uuid="1854afdb-d858-4e36-90da-32291625a3e7"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[AverageCost]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

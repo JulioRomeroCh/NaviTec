@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Letters_Associated_By_Id" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="94e352a2-b725-438e-b11b-70e51e7c6036">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DS_navitec"/>
+	<parameter name="Kid_nid" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[call letters_associated_by_id( $P{Kid_nid} );]]>
+	</queryString>
+	<field name="letter_code" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="letter_code"/>
+		<property name="com.jaspersoft.studio.field.label" value="letter_code"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="letter"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="93" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="10" width="400" height="30" uuid="b758e9c7-4ca2-486b-9152-f4b555103639"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Letters associated by id: "+$P{Kid_nid}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="220" y="50" width="100" height="30" uuid="6866650e-bc02-4da9-8111-66966f60f4d8"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Letter Code]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="220" y="10" width="100" height="30" uuid="8a3f71fe-10c5-4770-915f-5f9962253bd4"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{letter_code}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

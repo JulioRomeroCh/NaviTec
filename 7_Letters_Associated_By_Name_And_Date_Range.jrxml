@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Letters_Associated_By_Name_And_Date_Range" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="96fab6f9-75e8-44a9-923e-81595b75ec04">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DS_navitec"/>
+	<parameter name="Name" class="java.lang.String"/>
+	<parameter name="LastName" class="java.lang.String"/>
+	<parameter name="From" class="java.lang.String"/>
+	<parameter name="To" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[call letters_associated_by_name_and_date_range( $P{Name},  $P{LastName},  $P{From}, $P{To}  );]]>
+	</queryString>
+	<field name="letter_code" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="letter_code"/>
+		<property name="com.jaspersoft.studio.field.label" value="letter_code"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="letter"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="110" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="0" width="400" height="30" uuid="b7533003-53ff-4a62-9ba2-886fb5fd8d4b"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Letters associated by name and date range"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="30" width="400" height="30" uuid="fe5fd3b3-2361-4ceb-9e05-93f57625a8d7"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Name: "+$P{Name}+" "+$P{LastName}+
+". Date: from "+$P{From}+" to "+$P{To}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="227" y="70" width="100" height="30" uuid="fa79118a-0875-4788-a522-2bcd45dffc4d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Letter code]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="227" y="10" width="100" height="30" uuid="bd0567de-aef4-46b7-b084-e2e2b968d825"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{letter_code}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

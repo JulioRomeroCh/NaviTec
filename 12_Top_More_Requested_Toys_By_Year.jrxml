@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Amount_Of_Toys_Requested_By_Category" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="adee1a8b-f327-44b9-bcfb-3ed2144b8004">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DS_navitec"/>
+	<subDataset name="Toys_By_Year" uuid="6006d65f-861d-4ce8-aac5-06928bf7280a">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DS_navitec"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="year" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[call top_10_more_requested_toys($P{year} );]]>
+	</queryString>
+	<field name="toy" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="toy"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="toy"/>
+	</field>
+	<field name="ammount" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="ammount"/>
+		<property name="com.jaspersoft.studio.field.label" value="ammount"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="140" y="24" width="290" height="30" uuid="7c42f2ba-3d13-4859-b61f-9a6865dd1a06"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["Top more requested toys in " +$P{year}+":"
+]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="140" y="0" width="100" height="20" uuid="05811a3e-0d12-4a24-943c-d7efc59771e3"/>
+				<textFieldExpression><![CDATA[$F{toy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="0" width="100" height="20" uuid="8391bf35-fe28-46e2-9dbd-78e30be2678a"/>
+				<textFieldExpression><![CDATA[$F{ammount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Average_Of_Good_Behaviors_By_Age" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ba589481-fc94-4061-9ef9-f7ce4106f08b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DS_navitec"/>
+	<parameter name="Age1" class="java.lang.Integer"/>
+	<parameter name="Age2" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[call Average_of_Good_behaviors_by_age( $P{Age1},  $P{Age2} );]]>
+	</queryString>
+	<field name="age" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="age"/>
+		<property name="com.jaspersoft.studio.field.label" value="age"/>
+	</field>
+	<field name="indication" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="indication"/>
+		<property name="com.jaspersoft.studio.field.label" value="indication"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="behavior"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Average" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Average"/>
+		<property name="com.jaspersoft.studio.field.label" value="Average"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="24" width="400" height="30" uuid="ffe5c8d7-c584-4468-9684-c3321c763957"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Average of Good behaviors by age range: from "+$P{Age1}+" to "+$P{Age2}+" years."]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="140" y="17" width="100" height="30" uuid="4001a76c-0499-4d95-9f49-d344b29525da">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="59cdda79-44a8-47b3-a244-996a94ae3161"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="17" width="100" height="30" uuid="99082f9f-ad5d-4560-a821-53b638fb331f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ceac8a4-bcf2-4ccf-b82e-2c3aa6f1fd37"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[indication]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="20" width="100" height="30" uuid="8a3bd342-d289-4d70-a7a8-d7018f1640c3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2a298c1a-8ec3-4d55-a52b-5d2ed0cfdac9"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Average]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="49" splitType="Stretch">
+			<textField>
+				<reportElement x="140" y="10" width="100" height="30" uuid="ee820857-4527-4961-b475-36ee69561f07">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="59cdda79-44a8-47b3-a244-996a94ae3161"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="10" width="100" height="30" uuid="d1886803-a1ba-4a2d-9270-15f500d6bbbc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ceac8a4-bcf2-4ccf-b82e-2c3aa6f1fd37"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{indication}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="10" width="100" height="30" uuid="012b69db-d569-49a2-a849-45c459f9c8ab">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2a298c1a-8ec3-4d55-a52b-5d2ed0cfdac9"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Average}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

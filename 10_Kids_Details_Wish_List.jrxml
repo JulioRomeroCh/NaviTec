@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Kids_Details_Wish_List" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bb0bf15f-5c1f-430b-99ad-379fc9b1adf7">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DS_navitec"/>
+	<parameter name="KidId" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[call kids_detail_wish_list( $P{KidId} );]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+	</field>
+	<field name="lastname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="lastname"/>
+		<property name="com.jaspersoft.studio.field.label" value="lastname"/>
+	</field>
+	<field name="list_code" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="list_code"/>
+		<property name="com.jaspersoft.studio.field.label" value="list_code"/>
+	</field>
+	<field name="toy" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="toy"/>
+		<property name="com.jaspersoft.studio.field.label" value="toy"/>
+	</field>
+	<title>
+		<band height="80" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="0" width="400" height="30" uuid="d19742d3-e88d-454d-a177-40edf9cd0f5f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Details of wish list: "+$P{KidId}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="120" y="40" width="100" height="30" uuid="d449e86c-91c0-427a-ba05-18a12a8f4b93"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="41" width="100" height="30" uuid="5540b354-e925-46a1-b88f-57aeea42c382"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Last Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="41" width="100" height="30" uuid="a26ff024-2a31-4a75-b7a8-bbebb08d7627"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Wish list code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="41" width="100" height="30" uuid="4d9c4dde-55ad-4ab6-bf3f-78b5971c7cd3"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Toy]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="120" y="10" width="100" height="30" uuid="68145b75-d806-4403-9837-d48ee26b9efa"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="10" width="100" height="30" uuid="c92209ab-fefc-4633-8b75-54d1b1a4df5f"/>
+				<textFieldExpression><![CDATA[$F{lastname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="10" width="100" height="30" uuid="4ff74b32-3472-4a71-b2ab-15df06e1119c"/>
+				<textFieldExpression><![CDATA[$F{list_code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="10" width="100" height="30" uuid="a86790fc-280f-4241-b569-6863b7ba21b4"/>
+				<textFieldExpression><![CDATA[$F{toy}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
